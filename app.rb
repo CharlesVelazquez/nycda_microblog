@@ -29,7 +29,7 @@ get '/verify' do
 	end 
 end
 
-get '/user/:id/edit' do
+get '/users/:id/edit' do
 	@user = User.find(params[:id])
 	erb :edit_user_info
 	end
@@ -44,3 +44,9 @@ post '/edit_user' do
 User.update(username: params[:username], password: params[:password], country: params[:country], passion: params[:passion])
 redirect '/' 
 	end
+
+post '/destroy_user' do 
+	@user = User.find(params[:id])
+	@user.destroy
+	redirect '/'
+end
