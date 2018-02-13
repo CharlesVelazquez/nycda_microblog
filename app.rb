@@ -22,14 +22,25 @@ get '/verify' do
 	if User.where(["username = ? and password = ?", @username, @password])
 			@temp = User.where(["username = ? and password = ?", @username, @password])
 			@user = @temp[0]
-			session[:user_id] = user_id
+			session[:user_id] = @user.id
 			erb :user
 		else
 			erb :error
 	end 
 end
 
+get '/user/:id/edit' do
+	@user = User.find(params[:id])
+	erb :edit_user_info
+	end
+
 post '/new_user' do
 User.create(username: params[:username], password: params[:password], country: params[:country], passion: params[:passion])
 redirect '/'
 end
+
+post '/edit_user' do
+@user = User.find(session[:user_id])
+User.update(username: params[:username], password: params[:password], country: params[:country], passion: params[:passion])
+redirect '/' 
+	end
