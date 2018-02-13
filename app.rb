@@ -14,6 +14,11 @@ get '/create_new_user' do
 	erb :create_new_user
 	end
 
+post '/new_user' do
+	User.create(username: params[:username], password: params[:password], country: params[:country], passion: params[:passion])
+	redirect '/'
+end
+
 get '/verify' do
 	@all_users = User.all
 	@username = params[:username]
@@ -30,19 +35,32 @@ get '/verify' do
 end
 
 get '/users/:id/edit' do
-	@user = User.find(params[:id])
+	# @user = User.find(params[:id]) **I'm pretty sure I don't need this
 	erb :edit_user_info
-	end
-
-post '/new_user' do
-User.create(username: params[:username], password: params[:password], country: params[:country], passion: params[:passion])
-redirect '/'
 end
 
-post '/edit_user' do
-@user = User.find(session[:user_id])
-User.update(username: params[:username], password: params[:password], country: params[:country], passion: params[:passion])
-redirect '/' 
+post '/update_username' do
+	@user = User.find(session[:user_id])
+	User.update(username: params[:username])
+	redirect '/' 
+	end
+
+post '/update_password' do
+	@user = User.find(session[:user_id])
+	User.update(password: params[:password])
+	redirect '/' 
+	end
+
+post '/update_country' do
+	@user = User.find(session[:user_id])
+	User.update(country: params[:country])
+	redirect '/' 
+	end
+
+post '/update_passion' do
+	@user = User.find(session[:user_id])
+	User.update(passion: params[:passion])
+	redirect '/' 
 	end
 
 post '/destroy_user' do 
