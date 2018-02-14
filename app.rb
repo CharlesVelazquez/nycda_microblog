@@ -16,12 +16,13 @@ get '/create_new_user' do
 	end
 
 post '/new_user' do
-	if User.where("username = ?", params[:username])
+	if User.where("username = ?", params[:username]) != []
 		@error = 'This Username Already exist'
 		erb :error
 	else
 	User.create(username: params[:username], password: params[:password], country: params[:country], passion: params[:passion])
 	redirect '/'
+	end
 end
 
 get '/verify' do
