@@ -23,6 +23,7 @@ post '/new_user' do
 	User.create(username: params[:username], password: params[:password], country: params[:country], passion: params[:passion])
 	redirect '/'
 end
+end
 
 get '/verify' do
 	@all_users = User.all
