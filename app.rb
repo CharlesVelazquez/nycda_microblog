@@ -25,7 +25,6 @@ post '/new_user' do
 	end
 end
 
-
 get '/verify' do
 	@all_users = User.all
 	@username = params[:username]
