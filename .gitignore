@@ -3,3 +3,4 @@ public/css/main.css
 public/css/.sass-cache/*
 public/css/main.css.map
 Gemfile.lock
+mirco_blog_db.sqlite3 
