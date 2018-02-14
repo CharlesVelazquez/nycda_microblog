@@ -30,7 +30,7 @@ get '/verify' do
 	@username = params[:username]
 	@password = params[:password]
 
-	if User.where(["username = ? and password = ?", @username, @password])
+	if User.where(["username = ? and password = ?", @username, @password]) != []
 			@temp = User.where(["username = ? and password = ?", @username, @password])
 			@user = @temp[0]
 			@post = Post.where(user_id: @user.id)
@@ -73,7 +73,7 @@ post '/update_passion' do
 	end
 
 post '/destroy_user' do 
-	@user = User.find(params[:id])
+	@user = User.find(session[:user_id])
 	@user.destroy
 	redirect '/'
 end
