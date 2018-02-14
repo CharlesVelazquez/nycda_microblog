@@ -11,10 +11,15 @@ get '/' do
 end
 
 get '/create_new_user' do
+	@usernames = User.all
 	erb :create_new_user
 	end
 
 post '/new_user' do
+	if User.where("username = ?", params[:username])
+		@error = 'This Username Already exist'
+		erb :error
+	else
 	User.create(username: params[:username], password: params[:password], country: params[:country], passion: params[:passion])
 	redirect '/'
 end
@@ -27,9 +32,11 @@ get '/verify' do
 	if User.where(["username = ? and password = ?", @username, @password])
 			@temp = User.where(["username = ? and password = ?", @username, @password])
 			@user = @temp[0]
+			@post = Post.where(user_id: @user.id)
 			session[:user_id] = @user.id
 			erb :user
 		else
+			@error = "Username or Password Doesn't match"
 			erb :error
 	end 
 end
@@ -38,6 +45,7 @@ get '/users/:id/edit' do
 	# @user = User.find(params[:id]) **I'm pretty sure I don't need this
 	erb :edit_user_info
 end
+
 
 post '/update_username' do
 	@user = User.find(session[:user_id])
