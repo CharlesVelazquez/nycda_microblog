@@ -24,7 +24,6 @@ post '/new_user' do
 	redirect '/'
 	end
 end
-end
 
 get '/verify' do
 	@all_users = User.all
