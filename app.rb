@@ -155,6 +155,27 @@ post '/destroy_post' do
 	redirect '/'
 end
 
+get '/about' do
+
+erb :about
+
+end
+
+get '/profile' do
+	if session[:user_id] == nil
+		erb: index
+else
+	@user_id = session[:user_id]
+	@user = User.find(session[:user_id])
+	@post = Post.where(user_id: @user.id)
+	erb :user
+	
+	end
+end
+
+
+
+
 __END__
 
 This is the end of the document, hope all the code is to
