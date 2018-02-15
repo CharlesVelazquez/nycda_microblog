@@ -2,6 +2,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require './models'
+require 'sinatra/flash'
 
 #Now setting the databse and creating a session
 set :database, "sqlite3:mirco_blog_db.sqlite3"
@@ -25,6 +26,7 @@ post '/new_user' do
 			@error = 'This Username Already exist'#making a instance variable that will have a string with the specific error to be used on the error page
 			erb :error
 	else#creates user if where did get an empty array from not finding a prexisting username
+		flash[:alert] = 'Sucessfully created your Account'
 		User.create(username: params[:username], password: params[:password], country: params[:country], passion: params[:passion])
 		redirect '/'
 	end
@@ -55,40 +57,61 @@ first location. Then the usual session id stuff
 	end 
 end
 
-get '/users/:id/edit' do 
+get '/users/:id/edit' do #targeting user id in the url and then taking the user to the edit page
 	erb :edit_user_info
 end
 
+get '/users/:id/logout' do
+	flash[:alert] = 'Sucessfully Logged out, till next time ;)'
+	session[:user_id] = nil
+	redirect '/'
+end
+
+=begin
+Since these next post are repeats, I'll sum it up here, we find the
+specific user via the session Id, assing it to the variable user,
+then update the pertaining information to the variable, which then
+changes the information in the databse since the variable is linked
+via telepathy =) 
+=end
 
 post '/update_username' do
-	@user = User.find(session[:user_id])
-	User.update(username: params[:username])
+	user = User.find(session[:user_id])
+	user.update(username: params[:username])
 	redirect '/' 
 end
 
 post '/update_password' do
-	@user = User.find(session[:user_id])
-	User.update(password: params[:password])
+	user = User.find(session[:user_id])
+	user.update(password: params[:password])
 	redirect '/' 
 end
 
 post '/update_country' do
-	@user = User.find(session[:user_id])
-	User.update(country: params[:country])
+	user = User.find(session[:user_id])
+	user.update(country: params[:country])
 	redirect '/' 
 end
 
 post '/update_passion' do
-	@user = User.find(session[:user_id])
-	User.update(passion: params[:passion])
+	user = User.find(session[:user_id])
+	user.update(passion: params[:passion])
 	redirect '/' 
 end
 
 post '/destroy_user' do 
-	@user = User.find(session[:user_id])
-	@user.destroy
+	user = User.find(session[:user_id])
+	user.destroy
 	redirect '/'
 end
+
+=begin
+The post codes work exactly the same as the user codes, one thing I
+thought was kinda cool that we did was we established a post id
+using sessions which is awesome, tested it out and it works so session
+I guess can store multiple different things, good to know. So the
+following code will be the same as User for the most part
+=end
 
 post '/new_post' do
 	Post.create(title: params[:title], catagory: params[:category], content: params[:content], user_id: session[:user_id] )

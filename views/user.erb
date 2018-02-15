@@ -1,6 +1,7 @@
 <li><a href="/users/<%= @user.id%>/edit">Edit User Info</a></li>
 
 <h1>Hi there <%= @user.username %></h1>
+<a href="/users/:id/logout"> Logout</a>
 
 <h1> Create a New Post </h1>
 <form method="POST" action="/new_post">
