@@ -15,7 +15,8 @@
 
 <h1> Check Out These Cool Blogs</h1>
 
-<%@posts.each do |a|%>
+
+<% @posts.each do |a|%>
  <div><a href='/post/<%= a.id %>'> <%=a.title%> </a></div>
 <% end %>
 
