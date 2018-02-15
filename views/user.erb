@@ -12,7 +12,7 @@
 <form method="POST" action="/new_post">
 	<div>Title:</div> <input type="text" name="title" placeholder="Title"><br>
 	<div>Category:</div> <input type="text" name="category" placeholder=Category><br>
-	<div>Content:</div> <input type="text" name="content" placeholder="Write Your Post Here"><br>
+	<div>Content:</div> <input type="text" name="content" placeholder="Write Your Post Here" maxlength="150"><br>
 	<input type="submit" name="" value="Create Me">
 </form>
 
@@ -21,7 +21,7 @@
 
 <h3>All of your Posts</h3>
 
-<%@post.each do |a|%>
+<%@post.reverse.each do |a|%>
 <div><h4> <a href='/post/edit/<%= a.id %>'> <%= a.title %> </h4></div></a>
 <% end %>
 
