@@ -1,5 +1,8 @@
 <H1> <%=@post.title %> </H1>
+<h2>Author: <a href='/profile/<%= @user.id %>'> <%=@user.username %> </h2></a>
+
+
+<h2> Category: <%=@post.catagory %> </h2>	
 
 <h3>  <%=@post.content %> </h3>
 
-<h3> category: <%=@post.catagory %> </h3>

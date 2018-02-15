@@ -120,6 +120,7 @@ end
 
 get '/post/:id' do
 	@post = Post.find(params[:id])
+	@user = User.find(@post.user_id)
 	erb :post
 end
 
@@ -168,7 +169,11 @@ get '/profile' do
 	erb :user
 end
 
-
+get '/profile/:id' do 
+	@user = User.find(params[:id]) 
+	@post = Post.where(user_id: params[:id])
+erb :profile
+end
 
 
 __END__
