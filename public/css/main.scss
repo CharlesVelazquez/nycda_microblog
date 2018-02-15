@@ -1,9 +1,4 @@
-body {
-	background-color: #0066ff
-;
-	text-align: center;
-}
-
-.title {
-	font-color: white;
-}
+@import 'variables'
+@import 'navbar'
+@import 'container'
+@import 'mixins'
