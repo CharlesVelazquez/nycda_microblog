@@ -132,6 +132,13 @@ post '/destroy_post' do
 	redirect '/'
 end
 
+get '/about' do
+
+erb :about
+
+end
+
+
 __END__
 
 This is the end of the document, hope all the code is to
