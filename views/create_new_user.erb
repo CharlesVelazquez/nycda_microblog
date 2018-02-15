@@ -1,6 +1,6 @@
 <h2>Lets Create an Account</h2>
 
-<form method="POST" action="/new_user">
+<form method="POST" onsubmit="return passwordCheck(this)" action="/new_user">
 	<div>Username:</div> <input type="text" name="username" placeholder="Enter Username"><br>
 	<div>Password:</div> <input type="password" name="password" placeholder="password"><br>
 	<div>Counrty:</div> <input type="text" name="country" placeholder="Country Origin"><br>
