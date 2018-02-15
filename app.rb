@@ -163,7 +163,7 @@ end
 
 get '/profile' do
 	if session[:user_id] == nil
-		erb: index
+		erb :index
 else
 	@user_id = session[:user_id]
 	@user = User.find(session[:user_id])
