@@ -16,6 +16,6 @@
 <h3>All of your Posts</h3>
 
 <%@post.each do |a|%>
-<div><h4><%= a.title %></h4></div>
+<div><h4> <a href='/post/edit/<%= a.id %>'> <%= a.title %> </h4></div></a>
 <% end %>
 

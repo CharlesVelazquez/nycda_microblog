@@ -7,6 +7,7 @@ set :sessions, true
 require './models'
 
 get '/' do
+	@posts = Post.all
 	erb :index
 end
 
@@ -83,7 +84,37 @@ post '/new_post' do
 	redirect '/'
 end
 
-get '/display_post' do
-	get '/posts/:id/edit' do
-	erb profile
+get '/post/:id' do
+	@post = Post.find(params[:id])
+	erb :post
 end
+
+get '/post/edit/:id' do
+	@post = Post.find(params[:id])
+	erb :edit_post
+end
+
+
+post '/update_title' do
+	post.update(title: params[:title])
+	redirect '/' 
+	end
+
+post '/update_content' do
+	Post.update(content: params[:content])
+	redirect '/' 
+	end
+
+post '/update_category' do
+	Post.update(catagory: params[:category])
+	redirect '/' 
+	end
+
+
+post '/destroy_post' do 
+	post = Post.find(params[:id])
+	Post.destroy
+	redirect '/'
+end
+
+
