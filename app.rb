@@ -162,15 +162,10 @@ erb :about
 end
 
 get '/profile' do
-	if session[:user_id] == nil
-		erb :index
-else
 	@user_id = session[:user_id]
 	@user = User.find(session[:user_id])
 	@post = Post.where(user_id: @user.id)
 	erb :user
-	
-	end
 end
 
 
