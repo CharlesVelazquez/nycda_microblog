@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet/main.css">
 </head>
 <body>
 	<div id= 'title'> Welcome to the Micro Blogging Website </div>
 
-<nav class="navbar">
-	<ul>
+		<% if session[:user_id] != nil %>
 		<a href="/"> Home</a>
 		<a href="/about"> About</a>
 		<a href="/profile">Profile</a>
-	</ul>
+		<% else %>
+		<a href="/"> Home</a>
+		<a href="/about"> About</a>
+		<% end %>
 	
-</nav>
+
 
 <% flash.keys.each do |type| %>
   <div data-alert class="flash_<%= type %>">
