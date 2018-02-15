@@ -1,10 +1,23 @@
-<h1>Please Sign in</h1>
+<div id = 'title'>Please Sign in </div>
 
-<div>
+<div id= 'login'>
 	<form method="GET" action="/verify">
-		<input type="text" name="username">
-		<input type="password" name="password">
+		<input type="text" placeholder="Username" name="username">
+		<input type="password" placeholder="Password"  name="password">
 		<input type="submit" name="" value="Log In">
 	</form>
-	<li><a href="/create_new_user"> Sign up</a></li>
-</div>
+	</div>
+	
+	<li><a href="/create_new_user" id= 'signup'> Sign up</a></li>
+
+<div class="login-wrap">
+  <h2>Login</h2>
+
+ <div id= 'blogs'> Check Out These Cool Blogs </div>
+
+
+<% @posts.each do |a|%>
+ <div><a href='/post/<%= a.id %>'> <%=a.title%> </a></div>
+<% end %>
+
+

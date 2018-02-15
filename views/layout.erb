@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/stylesheet/main.css">
 </head>
 <body>
-	<h1>Welcome to the micro blogging Website</h1>
-
-<nav class="navbar">
-	<ul>
-		<li><a href="/"> Home</a></li>
-		<li><a href="/about"> About</a></li>
-		<li><a href="/Posts">Posts</a></li>
+	<div id= 'title'> Welcome to the Micro Blogging Website </div>
+	<ul class="navbar">
+		<% if session[:user_id] != nil %>
+		<a href="/"> Home</a>
+		<a href="/about"> About</a>
+		<a href="/profile">Profile</a>
+		<% else %>
+		<a href="/"> Home</a>
+		<a href="/about"> About</a>
+		<% end %>
 	</ul>
-</nav>
+	
 
+
+<% flash.keys.each do |type| %>
+  <div data-alert class="flash_<%= type %>">
+    <%= flash[type] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
+<div class="test">test for targeting</div>
 <div class="main-container"> <%= yield%></div>
 
 <script type="text/javascript" src="javascript/main.js"></script>
+<!-- <script type="text/javascript" src="javascript/manifest.json"></script> -->
 </body>
 </html>
