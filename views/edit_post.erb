@@ -1,2 +1,28 @@
 <h1>Your Post:</h1>
 
+<h2> <%=@post.title %> </h2>
+
+<h3> <%=@post.content %> </h3>
+<h3> category: <%=@post.catagory %> </h3>
+
+
+<form method="POST" action="/update_title">
+	<div>Title:</div> <input type="text" name="title" placeholder="Enter Title"><br>
+	<input type="submit" name="" value="Update Title">
+</form>
+
+<form method="POST" action="/update_content">
+	<div>Content:</div> <input type="text" name="content" placeholder="Enter Content"><br>
+	<input type="submit" name="" value="Update Content">
+</form>
+
+<form method="POST" action="/update_category">
+	<div>Category:</div> <input type="text" name="category" placeholder="Enter Category"><br>
+	<input type="submit" name="" value="Update Category">
+</form>
+
+<h3>Delete Your Post</h3>
+<hr>
+<form method="POST" action="/destroy_post">
+	<input type="submit" name="" value="Delete Me">
+</form>
