@@ -1,6 +1,10 @@
 <li><a href="/users/<%= @user.id%>/edit">Edit User Info</a></li>
 
-<h1>Hi there <%= @user.username %></h1>
+<h1>Hello, <%= @user.username %></h1>
+
+<h2> Your Info </h2>
+<div><h3>Country:</h3><%=@user.country%></div>
+<div><h3>Passion:</h3> <%=@user.passion%></div>
 
 <h1> Create a New Post </h1>
 <form method="POST" action="/new_post">
