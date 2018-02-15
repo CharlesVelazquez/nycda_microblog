@@ -1,6 +1,6 @@
 body {
-	background-color:  #3385ff
-
+     background: url(blogs.jpg);
+    background-size: 600px;
 }
 
 .navbar {
@@ -33,5 +33,13 @@ body {
 }
 
 #signup {
-	text-align: center;
+	align: center;
 }
+
+#blogs {
+	font-size: 30px;
+	color: white;
+}
+
+
+
