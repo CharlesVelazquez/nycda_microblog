@@ -13,10 +13,9 @@
 <div class="login-wrap">
   <h2>Login</h2>
 
- <div id= 'blogs'> Check Out These Cool Blogs </div>
+<h1> Check Out These Blogs:</h1>
 
-
-<% @posts.each do |a|%>
+<% @posts.reverse.take(10).each do |a|%>
  <div><a href='/post/<%= a.id %>'> <%=a.title%> </a></div>
 <% end %>
 
