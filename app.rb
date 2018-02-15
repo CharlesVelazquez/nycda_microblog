@@ -119,4 +119,14 @@ post '/destroy_post' do
 	redirect '/'
 end
 
+get '/about' do
 
+erb :about
+
+end
+
+
+
+
+
+ 
