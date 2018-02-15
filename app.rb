@@ -91,12 +91,14 @@ end
 
 get '/post/edit/:id' do
 	@post = Post.find(params[:id])
+	session[:post_id] = params[:id]
 	erb :edit_post
 end
 
 
 post '/update_title' do
-	post.update(title: params[:title])
+	a = Post.find(session[:post_id])
+	a.update(title: params[:title])
 	redirect '/' 
 	end
 
@@ -113,7 +115,7 @@ post '/update_category' do
 
 post '/destroy_post' do 
 	post = Post.find(params[:id])
-	Post.destroy
+	post.destroy
 	redirect '/'
 end
 
