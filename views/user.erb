@@ -2,12 +2,20 @@
 
 <h1>Hi there <%= @user.username %></h1>
 
-<h2>The user Id <%= @user.id%></h2>
+<h1> Create a New Post </h1>
+<form method="POST" action="/new_post">
+	<div>Title:</div> <input type="text" name="title" placeholder="Title"><br>
+	<div>Category:</div> <input type="text" name="category" placeholder=Category><br>
+	<div>Content:</div> <input type="text" name="content" placeholder="Write Your Post Here"><br>
+	<input type="submit" name="" value="Create Me">
+</form>
 
-<h3>All of your post</h3>
+
+
+
+<h3>All of your Posts</h3>
 
 <%@post.each do |a|%>
-<div><%= a.title %></div>
-<div><%= a.catagory %></div>
-<div><%= a.content %></div>
+<div><h4><%= a.title %></h4></div>
 <% end %>
+

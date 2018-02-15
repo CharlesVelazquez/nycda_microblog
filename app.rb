@@ -77,3 +77,13 @@ post '/destroy_user' do
 	@user.destroy
 	redirect '/'
 end
+
+post '/new_post' do
+	Post.create(title: params[:title], catagory: params[:category], content: params[:content], user_id: session[:user_id] )
+	redirect '/'
+end
+
+get '/display_post' do
+	get '/posts/:id/edit' do
+	erb profile
+end
