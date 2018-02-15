@@ -6,14 +6,16 @@
 <body>
 	<div id= 'title'> Welcome to the Micro Blogging Website </div>
 
-<nav class="navbar">
-	<ul>
+		<% if session[:user_id] != nil %>
 		<a href="/"> Home</a>
 		<a href="/about"> About</a>
 		<a href="/profile">Profile</a>
-	</ul>
+		<% else %>
+		<a href="/"> Home</a>
+		<a href="/about"> About</a>
+		<% end %>
 	
-</nav>
+
 
 <% flash.keys.each do |type| %>
   <div data-alert class="flash <%= type %> alert-box radius">
