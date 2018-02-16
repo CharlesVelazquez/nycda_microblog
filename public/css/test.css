@@ -24,3 +24,7 @@
     text-align: center;
     color: white;
 }
+
+#error_404{
+    background-image: url('images/404.jpg');
+}
