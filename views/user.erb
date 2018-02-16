@@ -1,23 +1,22 @@
 
-<li><a href="/users/<%= @user.id%>/edit">Edit User Info</a></li>
-<a href="/users/:id/logout"> Logout</a>
 
+<div type = button class =Jbutton> <a href="/users/:id/logout"> Logout</a></div>
 
 <div class = Jgreeting>
 <h1>Hello <%= @user.username %>.</h1>
 </div>
 
 <div class = Jinfo>
-<h2> Your Info: </h2>
 <div><strong>Country: </strong><%=@user.country%></div>
 <div><strong>Passion: </strong> <%=@user.passion%></div>
+<a href="/users/<%= @user.id%>/edit">Edit User Info</a>
 </div>
 
 <div class = JuserPosts>
 <h2>Post History:</h2>
 
 <%@post.reverse.each do |a|%>
-<div><h4> <a href='/post/edit/<%= a.id %>'> <%= a.title %> </h4></div></a>
+<div><h4><a href='/post/edit/<%= a.id %>'> <%= a.title %> </h4></div></a>
 <% end %>
 </div>
 

@@ -1,60 +1,76 @@
-
-
 .Jgreeting {
-	border: solid 5px;
-	background-color: grey;
 	color: white;
 	width: 50%;
+	height: 100px;
 	text-align: center;
 	position: relative;
-	left: 5%;
+	left: 25%;
 	font-size: 30px;
 	font-family: helvetica, sans-serif;
+
 }
 
 .Jinfo {
 	border: solid white 5px;
 	background-color: grey;
-	color: black;
-	width: 20%;
+	width: 30%;
+	height: 100px;
 	position: relative;
-	left: 60%;
-	bottom: 100px;
+	left: 55%;
+	top: 5px;
 	text-align: center;
-	font-size: 25px;
+	font-size: 20px;
 	font-family: helvetica, sans-serif;
 
 
 }
+
 
 .Jcreate {
 
 	border: solid white 5px;
 	background-color: grey;
 	color: black;
-	width: 30%;
+	width: 45%;
 	position: relative;
-	left: 10%;
-	bottom: 400px;
+	left: 5%;
+	bottom: 250px;
 	font-family: helvetica, sans-serif;
+	text-align: center;
 
 }
+
 
 .JuserPosts {
 
 	border: solid white 5px;
 	background-color: grey;
 	color: black;
-	width: 20%;
+	width: 30%;
+	height: 150px;
 	position: relative;
-	left: 45%;
-	bottom: 100px;
+	left: 55%;
+	top: 20px;
+	text-align: center;
 	font-family: helvetica, sans-serif;
 	overflow: scroll;
-	text-align: center;
 }
 
 .Jcontent{
-	width: 300px;
-	height: 100px;
+	height: 50px;
+}
+
+.Jbutton {
+	border: solid white 5px;
+	background-color: grey;
+	color: black;
+	width: 30%;
+	height: 50px;
+	font-family: helvetica, sans-serif;
+	border-radius: 10px;
+	position: relative;
+	top: 500px;
+	left: 55%;
+	font-size: 20px;
+	text-align: center;
 }
