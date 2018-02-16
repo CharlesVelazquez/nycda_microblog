@@ -1,8 +1,8 @@
 <div class id = 'post'>
 
-<div><H1> <%=@post.title %> </H1></div>
-<div><h2>Author: <a href='/profile/<%= @user.id %>'> <%=@user.username %> </h2></a></div>
-<div><h2> Category: <%=@post.catagory %> </h2></div>
-<div><h3>  <%=@post.content %> </h3></div>
+<div class="ch_title"><H1 class='text'> <%=@post.title %> </H1></div>
+<div class="ch_author"><h2 class='text'>Author: <a href='/profile/<%= @user.id %>'> <%=@user.username %> </h2></a></div>
+<div class="ch_category"><h2 class='text'> Category: <%=@post.catagory %> </h2></div>
+<div class="ch_content"><h3 class='text'>  <%=@post.content %> </h3></div>
 
 </div>
