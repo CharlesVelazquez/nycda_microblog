@@ -31,7 +31,6 @@ post '/new_user' do
 		redirect '/'
 	end
 end
-end
 
 #will start checking if the login info is valid
 get '/verify' do
