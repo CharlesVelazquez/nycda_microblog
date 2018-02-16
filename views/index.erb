@@ -1,14 +1,13 @@
-<!-- <div id = 'title'>Please Sign in </div> -->
+<div id = 'title'>Please Sign in </div>
 
 	<div class="login">
 	<h1>Login</h1>
-    <form method="post">
-    	<input type="text" name="u" placeholder="Username" required="required" />
-        <input type="password" name="p" placeholder="Password" required="required" />
+    <form method="GET" action="/verify">
+    	<input type="text" name="username" placeholder="Username" required="required" />
+        <input type="password" name="password" placeholder="Password" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large"> Sign In.</button>
     </form>
 </div>
-
 
 	<li><a href="/create_new_user" id= 'signup'> Sign up</a></li>
 
@@ -20,5 +19,3 @@
 <% @posts.reverse.take(10).each do |a|%>
  <div><a href='/post/<%= a.id %>'> <%=a.title%> </a></div>
 <% end %>
-
-
