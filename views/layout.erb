@@ -5,6 +5,8 @@
 </head>
 <body>
 	<div id= 'title'> Welcome to the Micro Blogging Website </div>
+
+
 	<ul class="navbar">
 		<% if session[:user_id] != nil %>
 		<a href="/"> Home</a>
@@ -16,6 +18,7 @@
 		<% end %>
 	</ul>
 	
+
 
 
 <% flash.keys.each do |type| %>
