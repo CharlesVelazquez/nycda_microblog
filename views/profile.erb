@@ -1,11 +1,16 @@
-<h1>Welcome to <%=@user.username %>'s Page</h1>
 
+<div class = jvisit><h1> Welcome to <%=@user.username %>'s Page</h1></div>
+
+<div class = jwrapper >
 <h2> Info: </h2>
 <div><h3>Country: <%=@user.country%></h3></div>
 <div><h3>Passion: <%=@user.passion%></h3></div>
+</div>
 
+<div class = jwrapper2>
 <h2> Blogs: </h2>
 
 <% @post.each do |a|%>
 <div><h4> <a href='/post/<%= a.id %>'> <%= a.title %> </h4></div></a>
 <% end %>
+</div>
