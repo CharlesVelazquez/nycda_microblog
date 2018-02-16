@@ -33,6 +33,40 @@ body {
   font-size: 30px;
   color: white; }
 
+/* http://localhost:4567/post/edit/1 */
+.main-container {
+  width: 90%;
+  margin: auto; }
+
+/* main.css (36, 8) */
+.text {
+  color: white;
+  text-align: center; }
+
+.ch_title {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  color: white; }
+
+.ch_author {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  color: white; }
+
+.ch_category {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  color: white; }
+
+.ch_content {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  color: white; }
+
 .flash_alert {
   text-align: center;
   top: 10px;

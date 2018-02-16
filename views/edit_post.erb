@@ -1,28 +1,32 @@
-<h1>Your Post:</h1>
+<div><h1 class='text'>Your Post:</h1></div>
 
-<h2> <%=@post.title %> </h2>
+<div class="ch_title"><h2 class='text'> <%=@post.title %> </h2></div>
 
-<h3> <%=@post.content %> </h3>
-<h3> category: <%=@post.catagory %> </h3>
+<div class="ch_content"><h3 class='text'> <%=@post.content %> </h3></div>
+<div class="ch_catagory"><h3 class='text'> category: <%=@post.catagory %> </h3></div>
 
-
+<div><h1 class='text'>Need to update your post?</h1></div>
 <form method="POST" action="/update_title">
-	<div>Title:</div> <input type="text" name="title" placeholder="Enter Title"><br>
+	<div class="ch_title">Title: <input type="text" name="title" placeholder="Enter Title"><br>
 	<input type="submit" name="" value="Update Title">
+	</div>
 </form>
 
 <form method="POST" action="/update_content">
-	<div>Content:</div> <input type="text" name="content" placeholder="Enter Content"><br>
+	<div class="ch_content">Content: <input type="text" name="content" placeholder="Enter Content"><br>
 	<input type="submit" name="" value="Update Content">
+	</div>
 </form>
 
 <form method="POST" action="/update_category">
-	<div>Category:</div> <input type="text" name="category" placeholder="Enter Category"><br>
+	<div class="ch_category">Category: <input type="text" name="category" placeholder="Enter Category"><br>
 	<input type="submit" name="" value="Update Category">
+	</div>
 </form>
-
-<h3>Delete Your Post</h3>
+<br>
+<div><h1 class="text">Warning, the button to permenatley delete your post is below, proceed with caution</h1></div>
 <hr>
+<h2 class="text">Delete Your Post</h2>
 <form method="POST" action="/destroy_post">
 	<input type="submit" name="" value="Delete Me">
 </form>
