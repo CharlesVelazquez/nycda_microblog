@@ -1,0 +1,60 @@
+
+
+.Jgreeting {
+	border: solid 5px;
+	background-color: grey;
+	color: white;
+	width: 50%;
+	text-align: center;
+	position: relative;
+	left: 5%;
+	font-size: 30px;
+	font-family: helvetica, sans-serif;
+}
+
+.Jinfo {
+	border: solid white 5px;
+	background-color: grey;
+	color: black;
+	width: 20%;
+	position: relative;
+	left: 60%;
+	bottom: 100px;
+	text-align: center;
+	font-size: 25px;
+	font-family: helvetica, sans-serif;
+
+
+}
+
+.Jcreate {
+
+	border: solid white 5px;
+	background-color: grey;
+	color: black;
+	width: 30%;
+	position: relative;
+	left: 10%;
+	bottom: 400px;
+	font-family: helvetica, sans-serif;
+
+}
+
+.JuserPosts {
+
+	border: solid white 5px;
+	background-color: grey;
+	color: black;
+	width: 20%;
+	position: relative;
+	left: 45%;
+	bottom: 100px;
+	font-family: helvetica, sans-serif;
+	overflow: scroll;
+	text-align: center;
+}
+
+.Jcontent{
+	width: 300px;
+	height: 100px;
+}
