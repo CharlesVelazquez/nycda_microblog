@@ -1,12 +1,29 @@
 <div id = 'title'>Please Sign in </div>
 
-<div id= 'login'>
+<!-- <div id= 'login'>
 	<form method="GET" action="/verify">
 		<input type="text" placeholder="Username" name="username">
 		<input type="password" placeholder="Password"  name="password">
 		<input type="submit" name="" value="Log In">
 	</form>
 	</div>
+ -->
+
+	<div class="login">
+	<h1>Login</h1>
+    <form method="post">
+    	<input type="text" name="u" placeholder="Username" required="required" />
+        <input type="password" name="p" placeholder="Password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large"> Sign In.</button>
+    </form>
+</div>
+
+
+
+
+
+
+
 	
 	<li><a href="/create_new_user" id= 'signup'> Sign up</a></li>
 
