@@ -1,4 +1,3 @@
-<div id = 'title'>Please Sign in </div>
 
 	<div class="login">
 	<h1>Login</h1>
@@ -9,13 +8,13 @@
     </form>
 </div>
 	
-	<li><a href="/create_new_user" id= 'signup'> Sign up</a></li>
+	<div class = Jnewuser> <h2> <a href="/create_new_user" id= 'signup'> Sign Up Here</a></h2></div>
 
 <div class="login-wrap">
-  <h2>Login</h2>
+
 
 <h1> Check Out These Blogs:</h1>
 
 <% @posts.reverse.take(10).each do |a|%>
- <div><a href='/post/<%= a.id %>'> <%=a.title%> </a></div>
+ <div class = Jfeed><a href='/post/<%= a.id %>'> <%=a.title%> </a></div>
 <% end %>

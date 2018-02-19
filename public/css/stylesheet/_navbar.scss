@@ -1,15 +1,11 @@
 .navbar {
-	width: 300px;
-	height: 100px;
-	border: 5px solid;
+	width: 500px;
 	margin: 0 auto; 
-	box-shadow: $signIn-shadow;
-	background-color:  #000099;
 	font-size: 30px;
-	color: white;
-	font-color: white;
 	text-align: center;
 }
+
+.navbar a {color: white;}
 
 #title {
   text-align: center;
@@ -19,7 +15,7 @@
 }
 
 #signup {
-	align: center;
+	text-align: center;
 }
 
 #blogs {
@@ -83,3 +79,7 @@ input {
 	-ms-transition: box-shadow .5s ease;
 	transition: box-shadow .5s ease;
 }
+
+.Jfeed a {color: white;}
+
+.Jnewuser a {color: white;}
