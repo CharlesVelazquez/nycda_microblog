@@ -8,9 +8,19 @@
     </form>
     <a href="/create_new_user" id= 'signup'> Sign up</a>
 </div>
+<<<<<<< HEAD
+	
+	<div class = Jnewuser> <h2> <a href="/create_new_user" id= 'signup'> Sign Up Here</a></h2></div>
+
+<div class="login-wrap">
+
+
+<h1> Check Out These Blogs:</h1>
+=======
 
 <div id='c_title'>Check Out These Blogs:</div>
+>>>>>>> 9390e883cbd16f1522018972f7ab474c019d14b3
 
 <% @posts.reverse.take(10).each do |a|%>
- <div><a href='/post/<%= a.id %>'> <%=a.title%> </a></div>
+ <div class = Jfeed><a href='/post/<%= a.id %>'> <%=a.title%> </a></div>
 <% end %>

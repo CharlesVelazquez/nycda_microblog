@@ -1,4 +1,9 @@
 .navbar {
+<<<<<<< HEAD
+	width: 500px;
+	margin: 0 auto; 
+	font-size: 30px;
+=======
 	position: absolute;
 	top: 15%;
 	left: 38%;
@@ -11,10 +16,15 @@
 	font-size: 30px;
 	// color: white;
 	// font-color: white;
+>>>>>>> 9390e883cbd16f1522018972f7ab474c019d14b3
 	text-align: center;
 
 }
 
+<<<<<<< HEAD
+.navbar a {color: white;}
+=======
+>>>>>>> 9390e883cbd16f1522018972f7ab474c019d14b3
 
 #title {
   text-align: center;
@@ -24,7 +34,7 @@
 }
 
 #signup {
-	align: center;
+	text-align: center;
 }
 
 #blogs {
@@ -89,3 +99,7 @@ input {
 	-ms-transition: box-shadow .5s ease;
 	transition: box-shadow .5s ease;
 }
+
+.Jfeed a {color: white;}
+
+.Jnewuser a {color: white;}
