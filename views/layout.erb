@@ -5,6 +5,8 @@
 </head>
 <body>
 	<div id= 'title'> Welcome to the Micro Blogging Website </div>
+
+
 	<ul class="navbar">
 		<% if session[:user_id] != nil %>
 		<a href="/"> Home</a>
@@ -18,6 +20,7 @@
 	
 
 
+
 <% flash.keys.each do |type| %>
   <div data-alert class="flash_<%= type %>">
     <%= flash[type] %>
@@ -27,6 +30,5 @@
 <div class="main-container"> <%= yield%></div>
 
 <script type="text/javascript" src="/javascript/main.js"></script>
-<!-- <script type="text/javascript" src="javascript/manifest.json"></script> -->
 </body>
 </html>

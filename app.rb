@@ -15,6 +15,11 @@ get '/' do
 	erb :index
 end
 
+not_found do
+  erb :oops, :layout => false
+
+end
+
 get '/create_new_user' do
 	@usernames = User.all #This is so we can check for existing usernames
 	erb :create_new_user
