@@ -156,7 +156,7 @@ end
 
 
 post '/destroy_post' do 
-	post = Post.find(params[:id])
+	post = Post.find(session[:post_id])
 	post.destroy
 	redirect '/'
 end
